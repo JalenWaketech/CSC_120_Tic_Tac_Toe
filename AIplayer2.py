@@ -4,7 +4,7 @@ import random
 def Freespace(board, move):
   return Board[move] == ''
 
-#G
+#Where on the board the AI moved and placing down the letter
 def AImove(board, letter, move):
   board[move] = letter
 
@@ -17,19 +17,15 @@ def RandomMove(board, mlist):
      if Freespace(board, row):
       pMoves.append(row)
 
-#determines the AI's Letter either it being X or O based of player 1
 # Determines where the computer can move on the board
-def Ply2Turn(board,computer):
-  If Ply2Turn =='X':
-    playerturn == 'O'
-  else:
-    Ply2Turn == 'O'
+def Ply2Turn(board, letter):
+  letter = 'O'
     
   for row in range(0,9):
     copy = printboard()
     if FreeSpace(copy, row):
-      AImove(copy, Ply2Turn, row)
-      if winstate(copy, Ply2Turn):
+      AImove(copy, letter, row)
+      if winstate(copy, letter):
         return row
    
   #Blocking Player 1 moves
